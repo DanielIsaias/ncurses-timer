@@ -8,84 +8,84 @@ void figlet(int row,char *title);
 
 int main(){
 
-	 WINDOW *sub1;
+     WINDOW *sub1;
      WINDOW *sub2;
      WINDOW *sub3;
      WINDOW *start;	
 
-	//variables para centrar la pantalla
+	//Variables to center the screen
 	 int len,indent,y,width;
 	 
-	//horas,minutos,segundos y en num <-- se almacena un numero con las condiciones
+	 //hours,minutes,seconds
  	 int h;
-     int m;
-     int s;
-	 int num;
+         int m;
+         int s;
+	 int num; //here, a number is assigned depending on the condition of the timer
 	 int ch;
 	 
-	 //para el boton start
-     int opcion;
+	 //for the start button
+         int opcion;
 
 
     initscr();
 	
-	//Inicio con el color de el programa
-    start_color();
-    init_pair(2,COLOR_BLACK,COLOR_GREEN);
+	//Started with the color of the program
+        start_color();
+        init_pair(2,COLOR_BLACK,COLOR_GREEN);
 
 
-	//Logo de el programa
-    figlet(5,"figlet TimerPunk");
+	//Program logo
+    	figlet(5,"figlet TimerPunk");
 
 
-	 //color de las sub ventanas
+	 //Centering the sub-windows
 	  getmaxyx(stdscr,y,width);
- 	  len = 2;        //ancho de la sub-ventana
-      indent = width - len;
-      indent /= 2; 		  //indent para centrar la ventana
+ 	  len = 2;        //sub window width
+          indent = width - len;
+          indent /= 2; 		  //indent to center the window
 
-	//creado la sub-ventanas
-  	//1 y 2 son el acho y largo de la ventana
-	sub1 = subwin(stdscr,1,3,15,indent-4);
+	//created the sub-windows
+	//1 and 2 are the width and length of the window
+	 sub1 = subwin(stdscr,1,3,15,indent-4);
 	 sub2 = subwin(stdscr,1,3,15,indent); 
 	 sub3 = subwin(stdscr,1,3,15,indent+4);
 
 	 start = subwin(stdscr,1,5,18,indent-1);
-     wprintw(start,"start");
+         wprintw(start,"start");
 
 
-	 //Dandonle color a las sub-ventanas
+	 //Giving color to the sub-windows
 	 wbkgd(sub1,COLOR_PAIR(2));
 	 wrefresh(sub1);
 
-     wbkgd(sub2,COLOR_PAIR(2));
+         wbkgd(sub2,COLOR_PAIR(2));
 	 wrefresh(sub2);
 
-     wbkgd(sub3,COLOR_PAIR(2));
+         wbkgd(sub3,COLOR_PAIR(2));
 	 wrefresh(sub3);
 
-     wbkgd(start,COLOR_PAIR(2));
+         wbkgd(start,COLOR_PAIR(2));
 	 wrefresh(start);
 
 
-	//Se pide la entrada en cada ventana 
-	//horas,minutos,segundos
+	//Entry is requested in each window
+	//hours,minutes,seconds
 	 wscanw(sub1,"%d",&h);
   	 wprintw(sub1,"%02d",h);
-     wrefresh(sub1);
+     	 wrefresh(sub1);
  
-     wscanw(sub2,"%d",&m);
-     wprintw(sub2,"%02d",m);
-     wrefresh(sub2);
+     	wscanw(sub2,"%d",&m);
+     	wprintw(sub2,"%02d",m);
+     	wrefresh(sub2);
 
-     wscanw(sub3,"%d",&s);
-     wprintw(sub3,"%02d",s);
-     wrefresh(sub3);
+     	wscanw(sub3,"%d",&s);
+     	wprintw(sub3,"%02d",s);
+     	wrefresh(sub3);
 
 	//tengo que agregar condiciones
 	//para verificar que sean numeros
 	
-if(h > 0 && m > 0 && s > 0 ) //Solo para contar HORAS,MINUTOS,SEGUNDOS
+   if(h > 0 && m > 0 && s > 0 ) //Solo para contar HORAS,MINUTOS,SEGUNDOS
         num  = 1;
 
     else if( h > 0 && m > 0) //Solo para contar HORAS Y MINUTOS
@@ -108,9 +108,9 @@ if(h > 0 && m > 0 && s > 0 ) //Solo para contar HORAS,MINUTOS,SEGUNDOS
 
 	
 	
-	//verifica que el usuario oprimio 'start'
-	//si lo hace el programa sigue el flujo de ejecucion
-	do{
+	// verify that the user clicked on 'start'
+	// if the program does follow the execution flow
+do{
     refresh();
     opcion = getch();
 
@@ -135,7 +135,7 @@ if(h > 0 && m > 0 && s > 0 ) //Solo para contar HORAS,MINUTOS,SEGUNDOS
 }while(opcion != 's');
 
 
-//Inicio de el swith para cada ejecutar el temporizador
+//Start of the switch for each timer run
 switch(num)
 	{
 		//Horas,minutos,segundos 
@@ -383,32 +383,30 @@ switch(num)
 
 
 
-//Esta fucion pone el en centro la salido de figlet
-//y la de cualquier comando,Desde la Fila que se le especifique
-//figlet es un programa "sudo apt-get figlet" el inicio no funcion si no lo tienes
+// This function puts the figlet output in the center
+// and that of any command from the Row that is specified
+// figlet is a program "sudo apt-get figlet" the start does not work if you do not have it
 void figlet(int row,char *title)
 {
     FILE *fp;
     char path[150];
 	
-	//popen guarda la salida de un comando y lo almacena en un archivo y despues tienes que llamarlo
+    //popen saves the output of a command and stores it in a file and then you have to call it
     fp = popen(title, "r");
 
-while (fgets(path, 150, fp) != NULL) //El bucle para leer las
-                                     //filas de el archivo
+while (fgets(path, 150, fp) != NULL) //loop to read the	islands of the archive
 {
     int len,indent,y,width;
 
-    getmaxyx(stdscr,y,width); //tamaño maximo de la pantalla
+    getmaxyx(stdscr,y,width); //maximum screen size
 
     len = strlen(path);
     indent = width - len;
     indent /= 2;
 
-    mvprintw(row,indent,path); //se mueve el cursor e imprime 
-                               //parte por parte
+    mvprintw(row,indent,path); //move the cursor and print part by part
 
-    row++; //contador para ir imprimiendo en cada fila
+    row++; //counter to print on each row
 
     refresh();
 }
