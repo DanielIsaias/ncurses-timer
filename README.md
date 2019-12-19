@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # TimerPunk
 TimerPunk: TimerPunk it is a terminal timer created with ncurses in C.
 
@@ -26,6 +26,3 @@ Run following: ```gcc -o timerpunk timerpunk.c -lncurses```, or just use the mak
 ``` sh
 After having compiled timerpunk and executed, you can enter the 'hours: minutes: seconds', once you have entered the values, press the 's' key to start and 'C trl+c' to exit.
 ```
-=======
-# ncurses-timer
->>>>>>> 3ae0601e1214f3817eff61cfbbe0b3b7116d740e
