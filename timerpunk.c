@@ -167,14 +167,14 @@ switch(num)
 
 			while(h-- > 0)//Despues las horas
 				{
-						wclear(sub1);
+			wclear(sub1);
                         wprintw(sub1,"%02d",h);
                        	wrefresh(sub1);
                         napms(1000);
 
               			 for(m=59; m >= 0; m--)
                             {
-								wclear(sub2);
+				wclear(sub2);
                                 wprintw(sub2,"%02d",m);
                                 wrefresh(sub2);
                                 napms(1000);
@@ -182,10 +182,10 @@ switch(num)
                                 for(s=59; s >= 0; s--)
                                 	{
 
-                                	wclear(sub3);
+                                    wclear(sub3);
                                     wprintw(sub3,"%02d",s);
                                     wrefresh(sub3);
-									napms(1000);
+				    napms(1000);
                                 	}
                             }
                  }
@@ -213,14 +213,14 @@ switch(num)
 
 			while(h-- > 0)//Despues las horas
 			{
-				wclear(sub1);
+		wclear(sub1);
                 wprintw(sub1,"%02d",h);
                 wrefresh(sub1);
                 napms(1000);
 
               			 for(m=59; m >= 0; m--)
                             {
-								wclear(sub2);
+				wclear(sub2);
                                 wprintw(sub2,"%02d",m);
                                 wrefresh(sub2);
                                 napms(1000);
@@ -228,10 +228,10 @@ switch(num)
                                 for(s=59; s >= 0; s--)
                                 {
 
-                                	wclear(sub3);
+                                    wclear(sub3);
                                     wprintw(sub3,"%02d",s);
                                     wrefresh(sub3);
-									napms(1000);
+				    napms(1000);
                                 }
                             }
             }
@@ -242,22 +242,22 @@ switch(num)
 		case 3:
 			for(s=s; s >= 0; s--)
 			{
-				wclear(sub3);
+		wclear(sub3);
                 wprintw(sub3,"%02d",s);
                 wrefresh(sub3);
-				napms(1000);
+	        napms(1000);
 			}
 
 			while(h-- > 0)
           			{
-						wclear(sub1);
+			wclear(sub1);
                         wprintw(sub1,"%02d",h);
                        	wrefresh(sub1);
                         napms(1000);
 
               			 for(m=59; m >= 0; m--)
                             {
-								wclear(sub2);
+				wclear(sub2);
                                 wprintw(sub2,"%02d",m);
                                 wrefresh(sub2);
                                 napms(1000);
@@ -265,10 +265,10 @@ switch(num)
                                 for(s=59; s >= 0; s--)
                                 	{
 
-                                	wclear(sub3);
+                                    wclear(sub3);
                                     wprintw(sub3,"%02d",s);
                                     wrefresh(sub3);
-									napms(1000);
+				    napms(1000);
                                 	}
                             }
                     }
@@ -279,10 +279,10 @@ switch(num)
 		case 4:
 			for(s=s; s >= 0; s--) //Empieza en los segundos
 			{
-				wclear(sub3);
+		wclear(sub3);
                 wprintw(sub3,"%02d",s);
                 wrefresh(sub3);
-				napms(1000);
+		napms(1000);
 			}
 
 			while(m-- > 0)//Despues desde los minutos
@@ -308,14 +308,14 @@ switch(num)
 		case 5:
 			while(h-- > 0) //Empieza desde las horas
           			{
-						wclear(sub1);
+			wclear(sub1);
                         wprintw(sub1,"%02d",h);
                        	wrefresh(sub1);
                         napms(1000);
 
               			 for(m=59; m >= 0; m--)
                             {
-								wclear(sub2);
+				wclear(sub2);
                                 wprintw(sub2,"%02d",m);
                                 wrefresh(sub2);
                                 napms(1000);
@@ -323,10 +323,10 @@ switch(num)
                                 for(s=59; s >= 0; s--)
                                 	{
 
-                                	wclear(sub3);
+                                    wclear(sub3);
                                     wprintw(sub3,"%02d",s);
                                     wrefresh(sub3);
-									napms(1000);
+				    napms(1000);
                                 	}
                             }
                     }
