@@ -371,7 +371,12 @@ switch(num)
 			break;
 
 	}
-//Fin de el switch <-----------------------------------------------------
+//Fin de el switch <----------------------------------------------------- 
+	
+	
+	attron(A_BLINK); //active BLINKING
+        figlet(5,"figlet TimerPunk"); //Text flashes when time runs out
+
 
 
     getch();
